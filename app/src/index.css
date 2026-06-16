@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 8% 6%;
+    --foreground: 0 0% 100%;
+    --card: 240 7% 11%;
+    --card-foreground: 0 0% 100%;
+    --popover: 240 7% 11%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 340 100% 59%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 50 100% 50%;
+    --secondary-foreground: 240 8% 6%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 4% 55%;
+    --accent: 50 100% 50%;
+    --accent-foreground: 240 8% 6%;
+    --destructive: 340 100% 59%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 5% 17%;
+    --input: 240 5% 17%;
+    --ring: 50 100% 50%;
+    --radius: 2px;
+  }
+
+  * {
+    @apply border-border;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0F0F12;
+    color: #FFFFFF;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .btn-brutal {
+    @apply relative inline-flex items-center justify-center font-mono text-xs font-medium uppercase tracking-widest;
+    background: #FF2D6E;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    border-radius: 0;
+    padding: 16px 24px;
+    box-shadow: 4px 4px 0px #FFD600;
+    transition: all 0.15s ease;
+  }
+
+  .btn-brutal:active {
+    box-shadow: 2px 2px 0px #FFD600;
+    transform: translate(2px, 2px);
+  }
+
+  .btn-brutal-secondary {
+    @apply relative inline-flex items-center justify-center font-mono text-xs font-medium uppercase tracking-widest;
+    background: transparent;
+    color: #FFD600;
+    border: 2px solid #FFD600;
+    border-radius: 0;
+    padding: 14px 24px;
+    box-shadow: 3px 3px 0px rgba(255, 214, 0, 0.3);
+    transition: all 0.15s ease;
+  }
+
+  .btn-brutal-secondary:active {
+    box-shadow: 1px 1px 0px rgba(255, 214, 0, 0.3);
+    transform: translate(2px, 2px);
+  }
+
+  .card-brutal {
+    background: #1A1A1E;
+    border: 2px solid #2E2E34;
+    border-radius: 2px;
+    transition: all 0.15s ease;
+  }
+
+  .card-brutal:hover {
+    border-color: #FFD600;
+    box-shadow: 4px 4px 0px #FFD600;
+  }
+
+  .tag-brutal {
+    @apply inline-block font-mono text-[11px] font-medium uppercase tracking-wider;
+    background: #242428;
+    color: #00E5FF;
+    border: 1px solid #2E2E34;
+    border-radius: 0;
+    padding: 6px 12px;
+  }
+
+  .price-badge {
+    @apply inline-flex items-center gap-1 font-mono text-lg font-bold;
+    background: #FFD600;
+    color: #0F0F12;
+    border-radius: 0;
+    padding: 8px 16px;
+  }
+
+  .input-brutal {
+    @apply w-full font-sans text-base;
+    background: #1A1A1E;
+    color: #FFFFFF;
+    border: 2px solid #2E2E34;
+    border-radius: 0;
+    padding: 16px;
+    transition: border-color 0.2s ease;
+  }
+
+  .input-brutal::placeholder {
+    color: #5A5A62;
+  }
+
+  .input-brutal:focus {
+    outline: none;
+    border-color: #FFD600;
+  }
+}
+
+@layer utilities {
+  .text-shadow-brutal {
+    text-shadow: 3px 3px 0px #FF2D6E, -1px -1px 0px #0F0F12;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 1.5s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 1.5s infinite;
+    background: linear-gradient(90deg, #1A1A1E 25%, #242428 50%, #1A1A1E 75%);
+    background-size: 200% 100%;
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
