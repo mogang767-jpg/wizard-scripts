@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Wizard Scripts</title>
+  <script>
+    // SPA redirect for GitHub Pages
+    const segment = 1; // repo name segment count
+    const l = window.location;
+    l.replace(
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 1 + segment).join('/') + '/?/' +
+      l.pathname.slice(1).split('/').slice(segment).join('/').replace(/&/g, '~and~') +
+      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      l.hash
+    );
+  </script>
+</head>
+<body>
+  Redirecting...
+</body>
+</html>
